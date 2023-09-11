@@ -6,6 +6,8 @@ services:
     ports:
       - "31337:80"
     environment:
+      WORDPRESS_CONFIG_EXTRA: |
+        define('DISALLOW_FILE_EDIT', false);
       WORDPRESS_DB_PASSWORD: password
     volumes:
       - "wp:/var/www/html:rw"
